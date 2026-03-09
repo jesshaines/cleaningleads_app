@@ -357,8 +357,10 @@ function toggleTokenVisibility() {
 }
 
 async function testConnection() {
-  const url   = document.getElementById('setting-url').value.trim().replace(/\/$/, '');
-  const token = document.getElementById('setting-token').value.trim();
+  // Always pull from the saved settings so clicking Test without re-typing still works
+  const saved = getSettings();
+  const url   = (document.getElementById('setting-url').value.trim()   || saved.workerUrl  || '').replace(/\/$/, '');
+  const token =  document.getElementById('setting-token').value.trim() || saved.userToken  || '';
   const result = document.getElementById('ping-result');
 
   if (!url || !token) {
