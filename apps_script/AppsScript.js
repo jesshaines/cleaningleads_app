@@ -22,7 +22,7 @@ var WORKER_KEY = 'LevGeorgiaAltonZoeKeltonJaden';
 
 // The ID of your Google Sheet (from its URL:
 //   https://docs.google.com/spreadsheets/d/SHEET_ID_HERE/edit)
-var SHEET_ID = 'https://docs.google.com/spreadsheets/d/18VPlnIOCHAUsg2_wibq16n--_4yWoHFyC4rZ7Uw5KzU/edit?gid=0#gid=0';
+var SHEET_ID = '18VPlnIOCHAUsg2_wibq16n--_4yWoHFyC4rZ7Uw5KzU';
 
 // Name of the tab to write bookings to.
 var TAB_NAME = 'Bookings';
