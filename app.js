@@ -357,10 +357,10 @@ function toggleTokenVisibility() {
 }
 
 async function testConnection() {
-  // Always pull from the saved settings so clicking Test without re-typing still works
+  // Always read from localStorage — input fields may not be populated yet
   const saved = getSettings();
-  const url   = (document.getElementById('setting-url').value.trim()   || saved.workerUrl  || '').replace(/\/$/, '');
-  const token =  document.getElementById('setting-token').value.trim() || saved.userToken  || '';
+  const url   = (saved.workerUrl  || '').replace(/\/$/, '');
+  const token =  saved.userToken  || '';
   const result = document.getElementById('ping-result');
 
   if (!url || !token) {
@@ -412,3 +412,4 @@ function fmtTime(t) {
 
 // ── Init ──────────────────────────────────────────────────────
 showPage('new-booking');
+loadSettings(); // pre-populate settings fields on first load
