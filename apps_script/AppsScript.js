@@ -18,11 +18,11 @@
 
 // ── Configuration ─────────────────────────────────────────────
 // Replace with the same value you set for WORKER_KEY in your Cloudflare Worker.
-var WORKER_KEY = 'REPLACE_WITH_YOUR_WORKER_KEY';
+var WORKER_KEY = 'LevGeorgiaAltonZoeKeltonJaden';
 
 // The ID of your Google Sheet (from its URL:
 //   https://docs.google.com/spreadsheets/d/SHEET_ID_HERE/edit)
-var SHEET_ID = 'REPLACE_WITH_YOUR_SHEET_ID';
+var SHEET_ID = 'https://docs.google.com/spreadsheets/d/18VPlnIOCHAUsg2_wibq16n--_4yWoHFyC4rZ7Uw5KzU/edit?gid=0#gid=0';
 
 // Name of the tab to write bookings to.
 var TAB_NAME = 'Bookings';
