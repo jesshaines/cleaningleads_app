@@ -1,0 +1,8 @@
+name            = "colony-surf-worker"
+main            = "src/index.ts"
+compatibility_date = "2024-09-23"
+
+# Secrets are NOT defined here — set them via `wrangler secret put` (see README).
+# This section just documents the expected vars for reference.
+# [vars]
+# ALLOWED_ORIGIN = "https://yourgithubuser.github.io"   # set as secret instead

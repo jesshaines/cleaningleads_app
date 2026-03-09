@@ -1,0 +1,261 @@
+/* ============================================================
+   Colony Surf Cleaning — App Styles
+   Aesthetic: Coastal & refined. Deep ocean navy, warm sand,
+   coral accent. DM Serif Display + DM Sans.
+   ============================================================ */
+
+:root {
+  --navy:      #0d2240;
+  --navy-mid:  #163355;
+  --ocean:     #1a5276;
+  --teal:      #1abc9c;
+  --coral:     #e8714a;
+  --sand:      #f5efe6;
+  --sand-dark: #e8ddd0;
+  --white:     #ffffff;
+  --text:      #1a2535;
+  --text-muted:#5e7082;
+  --radius:    12px;
+  --shadow:    0 4px 24px rgba(13,34,64,.10);
+  --shadow-sm: 0 2px 8px  rgba(13,34,64,.07);
+}
+
+/* ---- Base ---- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--sand);
+  color: var(--text);
+  font-size: 15px;
+  min-height: 100vh;
+}
+
+h1, h2, h3, .page-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+}
+
+/* ---- Navbar ---- */
+#main-nav {
+  background: var(--navy);
+  box-shadow: 0 2px 16px rgba(13,34,64,.25);
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+}
+
+.brand-text {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.2rem;
+  color: var(--white);
+  letter-spacing: .01em;
+}
+.brand-text em { color: var(--teal); font-style: italic; }
+.brand-wave { font-size: 1.4rem; }
+
+#main-nav .nav-link {
+  color: rgba(255,255,255,.75);
+  border-radius: 8px;
+  padding: .4rem .85rem;
+  font-size: .88rem;
+  font-weight: 500;
+  transition: background .2s, color .2s;
+}
+#main-nav .nav-link:hover,
+#main-nav .nav-link.active {
+  background: rgba(255,255,255,.12);
+  color: var(--white);
+}
+#main-nav .navbar-toggler { border-color: rgba(255,255,255,.3); }
+#main-nav .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,.85%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ---- Page layout ---- */
+.page { display: none; }
+.page.active { display: block; animation: fadeSlide .3s ease; }
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-header { border-bottom: 2px solid var(--sand-dark); padding-bottom: 1rem; }
+.page-title { font-size: 2rem; color: var(--navy); margin-bottom: .25rem; }
+.page-subtitle { color: var(--text-muted); margin: 0; font-size: .95rem; }
+
+/* ---- Cards ---- */
+.form-card {
+  background: var(--white);
+  border: 1.5px solid var(--sand-dark);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.section-header {
+  background: var(--navy);
+  color: var(--white) !important;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: .82rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  border-radius: calc(var(--radius) - 2px) calc(var(--radius) - 2px) 0 0 !important;
+  padding: .65rem 1.25rem;
+}
+
+/* ---- Form controls ---- */
+.form-label { font-weight: 500; font-size: .88rem; color: var(--navy); margin-bottom: .3rem; }
+.req { color: var(--coral); }
+
+.form-control, .form-select {
+  border: 1.5px solid #d0dae5;
+  border-radius: 8px;
+  font-size: .92rem;
+  padding: .5rem .85rem;
+  transition: border-color .2s, box-shadow .2s;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--ocean);
+  box-shadow: 0 0 0 3px rgba(26,82,118,.15);
+  outline: none;
+}
+
+textarea.form-control { resize: vertical; min-height: 80px; }
+
+/* ---- Buttons ---- */
+.btn-primary {
+  background: var(--navy);
+  border-color: var(--navy);
+  font-weight: 600;
+  letter-spacing: .02em;
+  border-radius: 8px;
+  transition: background .2s, transform .1s;
+}
+.btn-primary:hover { background: var(--navy-mid); border-color: var(--navy-mid); transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); }
+
+.btn-outline-secondary { border-radius: 8px; font-weight: 500; font-size: .9rem; }
+
+/* ---- Quote Box ---- */
+.quote-box {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--ocean) 100%);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow);
+}
+.quote-inner { text-align: center; }
+.quote-label { color: rgba(255,255,255,.7); font-size: .82rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: .5rem; }
+.quote-amount {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 2.75rem;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: .35rem;
+}
+.quote-note { color: rgba(255,255,255,.55); font-size: .8rem; }
+
+/* ---- Alert ---- */
+#form-alert .alert { border-radius: var(--radius); border: none; font-size: .92rem; }
+
+/* ---- Bookings Table ---- */
+.bookings-table-wrapper { overflow-x: auto; }
+.bookings-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.bookings-table thead tr {
+  background: var(--navy);
+  color: var(--white);
+}
+.bookings-table thead th {
+  padding: .75rem 1rem;
+  font-size: .78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  white-space: nowrap;
+}
+.bookings-table tbody tr {
+  border-bottom: 1px solid var(--sand-dark);
+  transition: background .15s;
+}
+.bookings-table tbody tr:last-child { border-bottom: none; }
+.bookings-table tbody tr:hover { background: var(--sand); }
+.bookings-table td {
+  padding: .65rem 1rem;
+  font-size: .88rem;
+  vertical-align: middle;
+}
+.bookings-table .badge-service {
+  background: var(--ocean);
+  color: white;
+  font-size: .74rem;
+  padding: .25em .6em;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+.price-cell { font-family: 'DM Serif Display', serif; font-size: 1rem; color: var(--teal); font-weight: 700; }
+.btn-delete {
+  background: none;
+  border: 1.5px solid #e0a0a0;
+  color: #c0392b;
+  border-radius: 6px;
+  padding: .25rem .5rem;
+  font-size: .8rem;
+  cursor: pointer;
+  transition: background .15s;
+}
+.btn-delete:hover { background: #fdecea; }
+
+/* ---- Schedule ---- */
+.schedule-date-group { margin-bottom: 2rem; }
+.schedule-date-label {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem;
+  color: var(--navy);
+  border-bottom: 2px solid var(--sand-dark);
+  padding-bottom: .5rem;
+  margin-bottom: 1rem;
+}
+.schedule-card {
+  background: var(--white);
+  border: 1.5px solid var(--sand-dark);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: .75rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.schedule-time {
+  background: var(--navy);
+  color: var(--white);
+  font-size: .8rem;
+  font-weight: 600;
+  padding: .3rem .7rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  min-width: 68px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.schedule-info .client-name { font-weight: 600; color: var(--navy); font-size: .95rem; }
+.schedule-info .client-addr { color: var(--text-muted); font-size: .84rem; }
+.schedule-price { margin-left: auto; font-family: 'DM Serif Display', serif; color: var(--teal); font-size: 1.05rem; white-space: nowrap; }
+
+/* ---- Settings ping result ---- */
+#ping-result .alert { border-radius: 8px; font-size: .88rem; margin: 0; }
+
+/* ---- Responsive ---- */
+@media (max-width: 576px) {
+  .page-title { font-size: 1.5rem; }
+  .quote-amount { font-size: 2rem; }
+  .schedule-card { flex-wrap: wrap; }
+  .schedule-price { margin-left: 0; }
+}
