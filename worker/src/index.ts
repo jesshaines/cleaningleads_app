@@ -142,9 +142,8 @@ export default {
           method:  'POST',
           headers: {
             'Content-Type': 'application/json',
-            'X-WORKER-KEY':  env.WORKER_KEY || '',
           },
-          body: JSON.stringify(payload),
+          body: JSON.stringify({ ...(payload as Record<string, unknown>), __workerKey: env.WORKER_KEY }),
         });
       } catch (err: unknown) {
         const msg = err instanceof Error ? err.message : String(err);
